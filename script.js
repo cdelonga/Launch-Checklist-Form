@@ -16,13 +16,11 @@ window.addEventListener("load", function() {
 		let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
 		let cargoMass = document.querySelector("input[name=cargoMass]").value;
 
-		if (pilotName === "" || copilotName === "" || fuelLevel === '' || isNaN(fuelLevel) || cargoMass === '' || isNaN(cargoMass) ) {
+		if (pilotName === "" || !isNaN(pilotName) || !isNaN(copilotName) || copilotName === "" || fuelLevel === '' || isNaN(fuelLevel) || cargoMass === '' || isNaN(cargoMass) ) {
 
-			//window.alert("Field Required. Please submit valid entry");
-			//faultyItems.style.visibility = 'hidden';
-			window.addEventListener("click", function (){
-				alert("Field Required. Please submit valid entry");
-			})
+			
+			window.alert("Field Required. Please submit valid entry");
+				
 
 			launchStatus.style.color = 'black';
 			launchStatus.innerHTML = 'Awaiting Information Before Launch';
